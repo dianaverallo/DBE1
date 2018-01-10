@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DBE1.QuotesPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Next" Clicked="Handle_Clicked" />
+            <Label 
+                Text="{Binding 
+				Source={x:Reference slider}, 
+				Path=Value, 
+				StringFormat='Font Size: {0:N0}'}" />
+            <Slider 
+                x:Name="slider" 
+                Maximum="50" 
+                Minimum="16" />
+            <Label 
+                x:Name="myQuote" 
+                FontSize="{Binding 
+				Source={x:Reference slider}, 
+				Path=Value}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
